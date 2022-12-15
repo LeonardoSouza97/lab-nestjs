@@ -1,11 +1,12 @@
 import 'reflect-metadata';
 
 import { Module } from '@nestjs/common';
-import { PrismaService } from './database/prisma.service';
+import { DatabaseModule } from './infra/database/database.module';
+import { HttpModule } from './infra/http/http.module';
 
 @Module({
-  imports: [],
+  imports: [DatabaseModule, HttpModule],
   controllers: [],
-  providers: [PrismaService],
+  providers: [],
 })
 export class AppModule {}
